@@ -13,6 +13,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import Popover from '@material-ui/core/Popover';
 import ColorButton from './ColorButton';
 import ColorBox from './ColorBox';
@@ -121,9 +122,9 @@ const ColorPicker = ({
   let textField = null;
   if (!hideTextfield) {
     textField = disableTextfield ? (
-      <div role="button" data-testid="colorpicker-noinput" onClick={handleClick}>
+      <Button data-testid="colorpicker-noinput" onClick={handleClick}>
         {color.raw}
-      </div>
+      </Button>
     ) : (
       <TextField color="primary" value={raw} onChange={handleChange} data-testid="colorpicker-input" />
     );
